@@ -10,5 +10,18 @@
     
     ⍝ Tacit solution implementing same algorithm as above.
     Sol2 ← (,∘⍉⊢⍴⍨2,(÷∘2)∘≢)
+    
+    ⍝ Tacit solution more in the style of Sol.
+    Sol3 ← (,∘⍉(2,2÷⍨≢)⍴⊢)
+    ⍝ Both Sol and Sol3 can be written without parentheses as `{,⍉⍵⍴⍨2,2÷⍨≢⍵}` and `(,∘⍉⊢⍴⍨2,2÷⍨≢)` respectively
 
+    ⍝ Different approach: get the indices mod `n`.
+    Sol4 ← {⍵[⍋(÷∘2|⍳)≢⍵]}
+
+    ⍝ The problem statement actually seems to provide `n` so if we take this as left argument:
+    Sol1n ← {,⍉2 ⍺⍴⍵}
+    Sol2n ← (,∘⍉⊢⍴⍨2,⊣)
+    Sol3n ← (,∘⍉(2,⊣)⍴⊢)
+    Sol4n ← {⍵[⍋⍺|⍳≢⍵]}
+     
 :EndNamespace
