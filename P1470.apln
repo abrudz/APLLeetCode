@@ -11,6 +11,7 @@
     ⍝ Tacit solution implementing same algorithm as above.
     Sol2 ← (,∘⍉⊢⍴⍨2,(÷∘2)∘≢)
     
+    ⍝ by @abrudz from here on
     ⍝ Tacit solution more in the style of Sol.
     Sol3 ← (,∘⍉(2,2÷⍨≢)⍴⊢)
     ⍝ Both Sol and Sol3 can be written without parentheses as `{,⍉⍵⍴⍨2,2÷⍨≢⍵}` and `(,∘⍉⊢⍴⍨2,2÷⍨≢)` respectively
@@ -23,5 +24,9 @@
     Sol2n ← (,∘⍉⊢⍴⍨2,⊣)
     Sol3n ← (,∘⍉(2,⊣)⍴⊢)
     Sol4n ← {⍵[⍋⍺|⍳≢⍵]}
+    
+    ⍝ If we instead take `(nums n)` as right argument, we can write a short tacit solution:
+    Sol5 ← ,∘⍉2@0⍴⊃
+    ⍝ `2@0` replaces `nums` with `2` giving `2 n` and this is then used to reshape `⊃(nums n)` i.e. `nums`
      
 :EndNamespace
